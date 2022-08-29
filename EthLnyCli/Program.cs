@@ -18,9 +18,12 @@ foreach (var word in input.Split(' '))
     switch (word)
     {
         case "react":
-            Process.Start("CMD.exe", "/K npx create-react-app");
+            Console.WriteLine("What will be the name of your app ? ");
+            string appName = Console.ReadLine();
+            Process.Start("CMD.exe", "/K npx create-react-app " + appName);
             break;
         case "vue":
+            Console.WriteLine("What will be the name of your app ? ");
             Process.Start("CMD.exe", "/K npm init vue@latest");
             break;
         case "vite":
